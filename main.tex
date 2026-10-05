@@ -1,0 +1,161 @@
+\documentclass[12pt,letterpaper]{article}
+
+% --- Codificación, Fuentes e Idioma (Motor PDFLaTeX) ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{newtxtext,newtxmath} % Times New Roman de alta calidad para APA 7 (Texto y Matematicas)
+
+% --- Geometría y Márgenes (APA 7: Exactamente 1 pulgada / 2.54 cm) ---
+\usepackage[margin=1in]{geometry}
+
+% --- Espaciado y Párrafos ---
+\usepackage{setspace}
+\onehalfspacing % Interlineado 1.5 común en reportes universitarios de ingeniería
+\usepackage{parskip} % Espacio entre párrafos en lugar de sangría forzada excesiva
+
+% --- Matemáticas y Símbolos Avanzados ---
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{icomma} % Corrige el comportamiento de la coma decimal en español
+
+% --- Gráficos, Tablas y Entornos Flotantes ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs} % Tablas profesionales (reemplaza líneas verticales feas por horizontales limpias)
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- Enlaces y Referencias cruzadas inteligentes ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdftitle={Documento Tecnico},
+    pdfauthor={Daniel}
+}
+
+% --- Bibliografía APA 7 con BibLaTeX ---
+\usepackage[backend=biber,style=apa,sortcites=true,sorting=nyt,natbib=true]{biblatex}
+\addbibresource{biblio/referencias.bib}
+
+% --- Inserción de Código Limpio y Estilizado (Ingeniería en Sistemas) ---
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{bgcode}{rgb}{0.96,0.96,0.96}
+\definecolor{keywordcolor}{rgb}{0.13,0.31,0.58}
+\definecolor{stringcolor}{rgb}{0.06,0.55,0.06}
+\definecolor{commentcolor}{rgb}{0.38,0.38,0.38}
+
+\lstdefinestyle{sistemasstyle}{
+    backgroundcolor=\color{bgcode},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{commentcolor}\itshape,
+    keywordstyle=\color{keywordcolor}\bfseries,
+    stringstyle=\color{stringcolor},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    rulecolor=\color{lightgray}
+}
+\lstset{style=sistemasstyle}
+
+% --- Encabezados y Pies de Página Profesionales ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Ingeniería en Sistemas Computacionales}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =================================================================
+% INICIO DEL DOCUMENTO
+% =================================================================
+\begin{document}
+
+% --- Portada Académica Formal ---
+\begin{center}
+    {\Large \textbf{INSTITUTO TECNOLÓGICO / UNIVERSIDAD}} \\[0.3cm]
+    {\large Facultad de Ingeniería en Sistemas Computacionales} \\[0.2cm]
+    {\normalsize 5to Semestre} \\[1.5cm]
+    
+    {\LARGE \textbf{Título Principal del Proyecto o Práctica}} \\[0.5cm]
+    {\large Subtítulo opcional o descripción del módulo} \\[2cm]
+    
+    \begin{tabular}{rl}
+        \textbf{Alumno:} & Daniel \\
+        \textbf{Materia:} & Nombre de la Asignatura \\
+        \textbf{Profesor:} & Nombre del Docente \\
+        \textbf{Fecha:} & \today \\
+    \end{tabular}
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+
+% --- Sección 1: Introducción ---
+\section{Introducción}
+\label{sec:introduccion}
+
+La redacción de este documento sigue los lineamientos del formato APA 7 adaptados para reportes de ingeniería. Los párrafos se estructuran de manera lógica y fluida. Es posible realizar referencias bibliográficas automáticas utilizando BibLaTeX, por ejemplo, al estudiar la ingeniería de software moderna \cite{sommerville2019}.
+
+% --- Sección 2: Marco Teórico ---
+\section{Marco Teórico}
+\label{sec:marco_teorico}
+
+\subsection{Fundamentos de la Arquitectura}
+Desarrollo conceptual de los temas correspondientes a la práctica o investigación del semestre.
+
+% --- Sección 3: Desarrollo e Implementación ---
+\section{Desarrollo e Implementación}
+\label{sec:desarrollo}
+
+En esta sección se detallan los artefactos técnicos, diagramas y fragmentos de código desarrollados.
+
+\subsection{Implementación de Código}
+El Listado \ref{code:ejemplo} muestra un bloque de código estructurado en Python integrado directamente desde la carpeta de fuentes.
+
+\begin{lstlisting}[language=Python, caption={Script de automatización base.}, label={code:ejemplo}]
+def inicializar_sistema(puerto: int) -> bool:
+    print(f"Iniciando servicio en el puerto {puerto}...")
+    return True
+
+if __name__ == "__main__":
+    inicializar_sistema(8080)
+\end{lstlisting}
+
+\subsection{Diagramas del Sistema}
+Para integrar esquemas, modelos Entidad-Relación o arquitecturas de red, utiliza el entorno gráfico estándar (Figura \ref{fig:arquitectura}).
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.75\textwidth]{src/arquitectura.png}
+    \caption{Arquitectura general del despliegue.}
+    \label{fig:arquitectura}
+\end{figure}
+
+% --- Sección 4: Resultados y Discusión ---
+\section{Resultados y Discusión}
+\label{sec:resultados}
+Análisis de rendimiento, pruebas unitarias o métricas obtenidas durante el desarrollo del proyecto.
+
+% --- Sección 5: Conclusiones ---
+\section{Conclusiones}
+\label{sec:conclusiones}
+Reflexiones finales sobre el cumplimiento de los objetivos planteados en la práctica de ingeniería.
+
+% --- Referencias APA 7 ---
+\newpage
+\printbibliography[title={Referencias}]
+
+\end{document}
