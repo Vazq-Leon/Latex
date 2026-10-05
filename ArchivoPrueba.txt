@@ -1,0 +1,3 @@
+#Hola aqui estare poniendo todo lo necesario. 
+##Abrire una carpeta para las imagenes 
+###Y una para los archivos sin compilar
