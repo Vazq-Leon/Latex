@@ -1,0 +1,283 @@
+\documentclass[12pt,letterpaper]{article}
+
+% --- Codificación, Fuentes e Idioma (Motor PDFLaTeX) ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{newtxtext,newtxmath} % Times New Roman de alta calidad para APA 7 (Texto y Matematicas)
+
+% --- Geometría y Márgenes (APA 7: Exactamente 1 pulgada / 2.54 cm) ---
+\usepackage[margin=1in]{geometry}
+
+% --- Espaciado y Párrafos ---
+\usepackage{setspace}
+\onehalfspacing % Interlineado 1.5 común en reportes universitarios de ingeniería
+\usepackage{parskip} % Espacio entre párrafos en lugar de sangría forzada excesiva
+
+% --- Matemáticas y Símbolos Avanzados ---
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{icomma} % Corrige el comportamiento de la coma decimal en español
+
+% --- Gráficos, Tablas y Entornos Flotantes ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs} % Tablas profesionales (reemplaza líneas verticales feas por horizontales limpias)
+\usepackage{caption}
+\usepackage{subcaption}
+
+% --- Enlaces y Referencias cruzadas inteligentes ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdftitle={Actividad 2 - Actividades de Programación},
+    pdfauthor={Daniel Vasquez Leon}
+}
+
+% --- Bibliografía APA 7 con BibLaTeX ---
+\usepackage[backend=biber,style=apa,sortcites=true,sorting=nyt,natbib=true]{biblatex}
+% \addbibresource{biblio/referencias.bib} % Descomentar y ajustar cuando tengas el archivo .bib
+
+% --- Inserción de Código Limpio y Estilizado (Ingeniería en Sistemas) ---
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{bgcode}{rgb}{0.96,0.96,0.96}
+\definecolor{keywordcolor}{rgb}{0.13,0.31,0.58}
+\definecolor{stringcolor}{rgb}{0.06,0.55,0.06}
+\definecolor{commentcolor}{rgb}{0.38,0.38,0.38}
+
+\lstdefinestyle{sistemasstyle}{
+    backgroundcolor=\color{bgcode},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    commentstyle=\color{commentcolor}\itshape,
+    keywordstyle=\color{keywordcolor}\bfseries,
+    stringstyle=\color{stringcolor},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=8pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    rulecolor=\color{lightgray}
+}
+\lstset{style=sistemasstyle}
+
+% --- Encabezados y Pies de Página Profesionales ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Ingeniería en Sistemas Computacionales}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =================================================================
+% INICIO DEL DOCUMENTO
+% =================================================================
+\begin{document}
+
+% --- Portada Académica Formal ---
+\begin{center}
+    {\Large \textbf{TECNOLÓGICO NACIONAL DE MÉXICO}} \\[0.3cm]
+    {\Large \textbf{INSTITUTO TECNOLÓGICO DE POCHUTLA}} \\[0.3cm]
+    {\large Carrera: Ingeniería en Sistemas Computacionales} \\[0.2cm]
+    {\normalsize Grupo: 5ISC} \\[1.5cm]
+    
+    {\LARGE \textbf{ACTIVIDAD 2. ACTIVIDADES DE PROGRAMACIÓN}} \\[0.5cm]
+    {\large Graficación de Figuras y Trazado de Líneas Curvas} \\[2cm]
+    
+    \begin{tabular}{rl}
+        \textbf{Integrantes:} & Keith Noelia Gómez Jose (241160231) \\
+                              & Daniel Vasquez Leon (241160224) \\
+                              & Alexis Garcia Ramirez (221160198) \\
+        \textbf{Materia:} & Graficación \\
+        \textbf{Docente:} & M.C. Flor Nashiely Peza Ojeda \\
+        \textbf{Lugar y Fecha:} & San Pedro Pochutla, Oaxaca, 16/10/26 \\
+    \end{tabular}
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+
+% --- Índice ---
+\tableofcontents
+\newpage
+
+% --- Sección: Introducción ---
+\section{Introducción}
+\label{sec:introduccion}
+
+El reporte documenta avances relacionados con la última actividad del tema 1, es una continuación y mejora del código anterior sobre figuras[cite: 1]. El reporte se divide en dos partes tanto en la actualización del código desarrollado en C++ como en la elaboración de líneas curvas específicamente hablando de Bézier y B-Spline utilizando como herramienta a GeoGebra[cite: 1]. El objetivo es entender mejor cómo se aplican diferentes conceptos matemáticos y también algoritmos para la representación gráfica por computadora[cite: 1].
+
+% --- Sección: Código Actualizado ---
+\section{Código Actualizado}
+\label{sec:codigo_actualizado}
+
+En la actualización del código se agregaron las opciones de añadir colores de relleno y agregar color al perímetro de la figura[cite: 1]. A continuación se muestra el ejemplo de un rectángulo al que se le cambiará de color el fondo, que por default es azul[cite: 1].
+
+\subsection{Pasos para cambiar de color una figura}
+
+\textbf{1. Seleccionamos la figura}
+
+Seleccionamos un rectángulo y la colocamos en donde queramos, si es necesario moverla de lugar con la opción mover figura podemos realizarlo, pero no salir del plano cartesiano[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion1.png}
+    \caption{Rectángulo en el cuadrante IV.}
+    \label{fig:rectangulo_cuadrante}
+\end{figure}
+
+\textbf{2. Añadir color}
+
+Seleccionamos la opción para Elegir color de relleno y seleccionamos el color de nuestra preferencia[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion2.png}
+    \caption{Seleccionar la opción de color de Relleno.}
+    \label{fig:color_relleno}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion3.png}
+    \caption{Ventana de colores abierta.}
+    \label{fig:ventana_colores}
+\end{figure}
+
+\textbf{3. Imagen con color nuevo}
+
+Seleccionamos el color rojo, y vemos que nuestra figura ahora es roja[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/imagen_color_nuevo.png}
+    \caption{Rectángulo con nuevo color de relleno rojo.}
+    \label{fig:color_nuevo}
+\end{figure}
+
+% --- Sección: Trazado de líneas curvas ---
+\section{Trazado de líneas curvas}
+\label{sec:trazado_curvas}
+
+Las curvas son partes importantes en la graficación ya que nos permite realizar o representar formas suaves o realizar trazos más precisos que las líneas rectas[cite: 1]. Las que generalmente son más utilizadas son las Bézier y B-Spline y que estas son formadas mediante puntos de control las que permiten modificar su forma[cite: 1].
+
+Y para ver mejor cómo funciona este proceso se realizó las curvas utilizando GeoGebra que nos permite ver de una forma fácil estas curvas además de que veremos cómo cambia la forma de la curva al modificar los puntos de control[cite: 1].
+
+\subsection{Curva de Bézier}
+
+\subsubsection{Definición}
+La curva de Bézier es una curva paramétrica definida mediante puntos de control y polinomios de Bernstein[cite: 1]. En una curva cúbica se utilizan cuatro puntos, denominados A, B, C y D[cite: 1]. El punto A representa el inicio de la curva y D su final, mientras que B y C permiten controlar su dirección y forma[cite: 1].
+
+Su expresión matemática es[cite: 1]:
+$$ P(t) = (1 - t)^3 A + 3(1 - t)^2 t B + 3(1 - t) t^2 C + t^3 D $$
+
+En donde $t$ es un parámetro el cual toma valores que van de 0 a 1[cite: 1]. Al ir moviendo el parámetro se pueden ver los diferentes puntos que forman la curva[cite: 1].
+
+\subsubsection{Pasos para dibujar la curva en GeoGebra}
+Abrir la calculadora gráfica de GeoGebra y posicionarse en la barra de entrada, ahí se introducen puntos que en este caso se realizó una curva de Bézier Cúbica entonces para ello se introducen 4 puntos[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.5\textwidth]{ruta/a/ilustracion4.png}
+    \caption{Puntos para la curva Bézier cúbica.}
+    \label{fig:puntos_bezier}
+\end{figure}
+
+Se crea un deslizador en donde se define a $t = 0$ configurado con un intervalo de 0 a 1 con un incremento de 0.01[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.5\textwidth]{ruta/a/ilustracion5.png}
+    \caption{Creación del deslizador.}
+    \label{fig:deslizador}
+\end{figure}
+
+Luego se definen las coordenadas paramétricas que en este caso se introducen las funciones para $PX(t)$ y $PY(t)$ utilizando las fórmulas de Bézier para calcular las coordenadas de $X$ e $Y$[cite: 1]. Para esto utilizamos las fórmulas de los polinomios de Bernstein para interpolar los puntos de control las cuales son los siguientes[cite: 1]:
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{ruta/a/ilustracion7.png}
+    \caption{Fórmulas de los polinomios de Bernstein.}
+    \label{fig:bernstein}
+\end{figure}
+
+Después se crea un punto P que recorrerá la curva y que la posición dependerá del parámetro $t$[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.5\textwidth]{ruta/a/ilustracion8.png}
+    \caption{Creación del punto P.}
+    \label{fig:punto_p}
+\end{figure}
+
+Para ver por dónde pasa la curva se utiliza un comando de GeoGebra llamada \texttt{Curva(PX(u), PY(u), u, 0, 1)}, la cual nos ayudará a trazar la curva de Bézier completa[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{ruta/a/ilustracion9.png}
+    \caption{Uso del comando Curva en GeoGebra.}
+    \label{fig:comando_curva}
+\end{figure}
+
+Para ver el movimiento del punto P recorriendo la curva se activa la animación del deslizador($t$)[cite: 1].
+
+En esta imagen final se puede apreciar los 4 puntos introducidos previamente además del deslizador $t$, la curva generada y el punto P recorriendo la curva[cite: 1]. El punto A representa el inicio de la curva mientras que el punto D representa el fin de la curva[cite: 1]. Los puntos A y B son los puntos de control que van a indicar cómo será la curva[cite: 1]. Por ejemplo, si se mueve un punto de control, la curva ilustrada en color rojo cambiará de forma[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion11.png}
+    \caption{Ilustración completa de la curva Bézier cúbica.}
+    \label{fig:curva_bezier_completa}
+\end{figure}
+
+\subsection{Curva B-Spline}
+
+\subsubsection{Definición}
+La curva B-Spline es una representación matemática que permite construir curvas suaves mediante varios puntos de control[cite: 1]. A diferencia de una curva de Bézier cúbica, que utiliza cuatro puntos de control, una B-Spline puede trabajar con un conjunto mayor de puntos, lo que permite modificar partes de la curva con mayor flexibilidad[cite: 1]. Generalmente, la curva no pasa por todos los puntos de control[cite: 1].
+
+Se crean los puntos de control y para ello se introdujo 5 puntos en la calculadora gráfica de GeoGebra[cite: 1]:
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.7\textwidth]{ruta/a/ilustracion12.png}
+    \caption{Puntos de control para curva B-Spline.}
+    \label{fig:puntos_bspline}
+\end{figure}
+
+Se genera la curva utilizando el comando \texttt{Spline} con los puntos creados, se llama a la lista y también se usó el grado 3 del polinomio[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion13.png}
+    \caption{Uso de comando Spline para la curva.}
+    \label{fig:comando_spline}
+\end{figure}
+
+En la siguiente figura se puede ver la creación de la curva después de usar el comando con la lista de puntos, la línea curva que se ve es el resultado a partir de ver por dónde pasan los puntos y es por ahí donde puede pasar o que casi pasa por ese punto de control e igual al moverse los puntos de control se movería el resultado de la curva[cite: 1].
+
+\begin{figure}[H]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{ruta/a/ilustracion14.png}
+    \caption{Curva B-Spline generada.}
+    \label{fig:curva_bspline}
+\end{figure}
+
+
+% --- Sección: Conclusiones ---
+\section{Conclusión}
+\label{sec:conclusiones}
+
+El implementar colores y rellenos al código actualizado de figuras permite una mayor personalización creando el programa con herramientas de diseño gráfico real[cite: 1]. Para aplicar los colores se basó en el uso de estructuras de selección y las funciones de la librería usada que se documentó en el reporte[cite: 1]. 
+
+Por otro lado también se usó GeoGebra para la comprensión visual de las curvas Bézier y B-Spline demostrando que las curvas son polinomios evaluados en un parámetro $t$[cite: 1]. Esta actividad permite comprender desafíos reales que se presentan al desarrollar videojuegos, hacer animaciones, diseño asistido por computadora y en muchas otras áreas lo que nos permitió generar más interés para nuestros futuros proyectos relacionados con estos temas[cite: 1].
+
+\end{document}

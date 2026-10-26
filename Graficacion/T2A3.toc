@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Código Actualizado}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Pasos para cambiar de color una figura}{3}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Trazado de líneas curvas}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Curva de Bézier}{4}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Definición}{4}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Pasos para dibujar la curva en GeoGebra}{4}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Curva B-Spline}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Definición}{6}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Conclusión}{6}{section.4}%
