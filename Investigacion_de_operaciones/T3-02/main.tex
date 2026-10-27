@@ -1,0 +1,89 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{icomma}
+\usepackage{parskip}
+\usepackage{setspace}
+\onehalfspacing
+
+\begin{document}
+\begin{center}
+{\Large\textbf{Actividad T3-02. Problemario}}\\[2pt]
+Investigación de Operaciones
+\end{center}
+
+\section*{Problema 1}
+$D=780-10p$, costo fijo $\$800$ y costo variable $\$30$ por unidad.
+
+\textbf{Paso 1. Precio en función de la demanda.}
+\[ p=\frac{780-D}{10}=78-\frac{D}{10}. \]
+
+\textbf{Paso 2. Modelo de utilidad.}
+\begin{align*}
+I(D)&=pD=78D-\tfrac{1}{10}D^2,\\
+C(D)&=800+30D,\\
+U(D)&=I-C=-\tfrac{1}{10}D^2+48D-800.
+\end{align*}
+
+\textbf{a) Cantidad que maximiza la utilidad.}
+\[ U'(D)=-\tfrac{1}{5}D+48=0 \;\Rightarrow\; D^*=240\text{ unidades/mes}. \]
+Como $U''(D)=-\tfrac15<0$, es un máximo.
+
+\textbf{b) Utilidad máxima.}
+\[ U(240)=-\tfrac{1}{10}(240)^2+48(240)-800=-5760+11520-800=\$4\,960\text{ por mes}. \]
+El precio correspondiente es $p=78-24=\$54$.
+
+\textbf{c) $D_1$ y $D_2$ (puntos de equilibrio, donde $U=0$).}
+\begin{align*}
+-\tfrac{1}{10}D^2+48D-800&=0 \;\Rightarrow\; D^2-480D+8000=0,\\
+D&=\frac{480\pm\sqrt{480^2-4(8000)}}{2}=\frac{480\pm\sqrt{198\,400}}{2}=240\pm40\sqrt{31}.
+\end{align*}
+\[ D_1\approx 17{,}29\approx 17\text{ unidades},\qquad D_2\approx 462{,}71\approx 463\text{ unidades}. \]
+Entre $D_1$ y $D_2$ la empresa tiene utilidad positiva.
+
+\section*{Problema 2}
+$I(x)=-2x^2+340x$, $C(x)=3x^2+600$.
+
+\textbf{Paso 1.}
+\[ U(x)=I(x)-C(x)=-2x^2+340x-3x^2-600=-5x^2+340x-600. \]
+
+\textbf{Paso 2. Punto crítico.}
+\[ U'(x)=-10x+340=0\;\Rightarrow\;x=34. \]
+
+\textbf{Paso 3. Verificación.} $U''(x)=-10<0$, por lo tanto $x=34$ es un máximo.
+
+\textbf{a) Utilidad máxima.}
+\[ U(34)=-5(1156)+340(34)-600=-5780+11560-600=5180. \]
+\[ \boxed{U_{\max}=5\,180\text{ (u.m.) con }x=34\text{ unidades.}} \]
+
+\section*{Problema 3}
+$D=\sqrt{100-p}$, costo fijo $\$1\,125$ y costo variable $\$100$ por unidad.
+
+\textbf{Paso 1. Precio en función de la demanda.}
+\[ D^2=100-p\;\Rightarrow\;p=100-D^2,\qquad 0\le D\le 10. \]
+
+\textbf{Paso 2. Modelo de utilidad.}
+\begin{align*}
+I(D)&=pD=100D-D^3,\\
+C(D)&=1125+100D,\\
+U(D)&=100D-D^3-1125-100D=-D^3-1125.
+\end{align*}
+
+\textbf{a) Cantidad que maximiza la utilidad.}
+\[ U'(D)=-3D^2=0\;\Rightarrow\;D=0. \]
+Para todo $D>0$ se cumple $U'(D)<0$, así que $U$ es decreciente en todo el dominio. El máximo está en el extremo $D=0$:
+\[ \boxed{D^*=0\text{ unidades}},\qquad U(0)=-\$1\,125. \]
+Con estos costos no conviene producir. El costo variable ($\$100$) es igual al precio máximo que admite la demanda ($p\to100$), de modo que cada unidad vendida se cuesta al menos lo que se cobra por ella. La mejor opción es no producir y asumir solo el costo fijo, con una pérdida de $\$1\,125$ al mes.
+
+\textbf{b) ¿Cómo saber que maximiza la utilidad?}
+\begin{itemize}
+\item Primera derivada: $U'(D)=-3D^2\le0$ para todo $D\ge0$, y vale cero solo en $D=0$. La utilidad nunca crece al aumentar la producción.
+\item Segunda derivada: $U''(D)=-6D\le0$ para $D\ge0$. La función es cóncava en el dominio.
+\item Comparación de valores: $U(0)=-1\,125$, $U(5)=-1\,250$, $U(10)=-2\,125$. El valor en $D=0$ es el mayor.
+\end{itemize}
+Por lo tanto, $D=0$ es el máximo global de $U$ en $[0,10]$.
+\end{document}
