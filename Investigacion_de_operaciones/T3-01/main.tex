@@ -41,19 +41,19 @@
 \begin{document}
 
 \begin{center}
-    {\Large \textbf{TECNOLÓGICO NACIONAL DE MÉXICO}} \\[0.3cm]
-    {\Large \textbf{INSTITUTO TECNOLÓGICO DE POCHUTLA}} \\[0.3cm]
-    {\large Carrera: Ingeniería en Sistemas Computacionales} \\[1.5cm]
+	{\Large \textbf{TECNOLÓGICO NACIONAL DE MÉXICO}} \\[0.3cm]
+	{\Large \textbf{INSTITUTO TECNOLÓGICO DE POCHUTLA}} \\[0.3cm]
+	{\large Carrera: Ingeniería en Sistemas Computacionales} \\[1.5cm]
 
-    {\LARGE \textbf{ACTIVIDAD T3-01. PROGRAMACIÓN NO LINEAL}} \\[0.5cm]
-    {\large Reporte técnico: mapa conceptual y esquema de optimización clásica} \\[2cm]
+	{\LARGE \textbf{ACTIVIDAD T3-01. PROGRAMACIÓN NO LINEAL}} \\[0.5cm]
+	{\large Reporte técnico: mapa conceptual y esquema de optimización clásica} \\[2cm]
 
-    \begin{tabular}{rl}
-        \textbf{Alumno:} & [Nombre del alumno] \\
-        \textbf{Materia:} & Investigación de Operaciones \\
-        \textbf{Docente:} & [Nombre del docente] \\
-        \textbf{Lugar y fecha:} & San Pedro Pochutla, Oaxaca, 26/10/2026 \\
-    \end{tabular}
+	\begin{tabular}{rl}
+		\textbf{Alumno:}        & [Daniel Vazquez Leon]                  \\
+		\textbf{Materia:}       & Investigación de Operaciones           \\
+		\textbf{Docente:}       & [Salmoran]                             \\
+		\textbf{Lugar y fecha:} & San Pedro Pochutla, Oaxaca, 26/10/2026 \\
+	\end{tabular}
 \end{center}
 \thispagestyle{empty}
 \newpage
@@ -77,49 +77,49 @@ Este reporte presenta dos esquemas. El primero es un mapa conceptual de la PNL: 
 
 Un problema de programación no lineal busca
 \begin{equation}
-\begin{aligned}
-\text{optimizar}\quad & f(x_1,\dots,x_n) \\
-\text{sujeto a}\quad & g_i(x_1,\dots,x_n)\le b_i,\quad i=1,\dots,m,
-\end{aligned}
+	\begin{aligned}
+		\text{optimizar}\quad & f(x_1,\dots,x_n)                             \\
+		\text{sujeto a}\quad  & g_i(x_1,\dots,x_n)\le b_i,\quad i=1,\dots,m,
+	\end{aligned}
 \end{equation}
 donde al menos una de las funciones $f$ o $g_i$ es no lineal en las variables de decisión (Hillier y Lieberman, 2015). Los modelos con restricciones de igualdad se escriben como $h_j(\mathbf{x})=0$.
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[node distance=7mm and 6mm]
-\node[root] (pnl) {Programación No Lineal (PNL)};
+	\centering
+	\begin{tikzpicture}[node distance=7mm and 6mm]
+		\node[root] (pnl) {Programación No Lineal (PNL)};
 
-\node[main,below left=14mm and 18mm of pnl] (def) {Conceptos básicos};
-\node[main,below=14mm of pnl] (dif) {PNL frente a PL};
-\node[main,below right=14mm and 18mm of pnl] (cla) {Clasificación};
+		\node[main,below left=14mm and 18mm of pnl] (def) {Conceptos básicos};
+		\node[main,below=14mm of pnl] (dif) {PNL frente a PL};
+		\node[main,below right=14mm and 18mm of pnl] (cla) {Clasificación};
 
-\draw[arr] (pnl) -- (def);
-\draw[arr] (pnl) -- (dif);
-\draw[arr] (pnl) -- (cla);
+		\draw[arr] (pnl) -- (def);
+		\draw[arr] (pnl) -- (dif);
+		\draw[arr] (pnl) -- (cla);
 
-\node[leaf,below=6mm of def] (d1) {Función objetivo $f(\mathbf{x})$ y/o restricciones $g_i(\mathbf{x})$ no lineales};
-\node[leaf,below=4mm of d1] (d2) {Variables de decisión continuas};
-\node[leaf,below=4mm of d2] (d3) {Región factible puede ser no convexa};
-\node[leaf,below=4mm of d3] (d4) {Óptimo local $\ne$ óptimo global};
-\draw[arr] (def) -- (d1); \draw[arr] (d1) -- (d2);
-\draw[arr] (d2) -- (d3); \draw[arr] (d3) -- (d4);
+		\node[leaf,below=6mm of def] (d1) {Función objetivo $f(\mathbf{x})$ y/o restricciones $g_i(\mathbf{x})$ no lineales};
+		\node[leaf,below=4mm of d1] (d2) {Variables de decisión continuas};
+		\node[leaf,below=4mm of d2] (d3) {Región factible puede ser no convexa};
+		\node[leaf,below=4mm of d3] (d4) {Óptimo local $\ne$ óptimo global};
+		\draw[arr] (def) -- (d1); \draw[arr] (d1) -- (d2);
+		\draw[arr] (d2) -- (d3); \draw[arr] (d3) -- (d4);
 
-\node[leaf,below=6mm of dif] (f1) {PL: el óptimo está en un vértice de la región factible};
-\node[leaf,below=4mm of f1] (f2) {PNL: el óptimo puede estar en el interior, en la frontera o en un vértice};
-\node[leaf,below=4mm of f2] (f3) {PL: simplex finito. PNL: métodos analíticos o iterativos};
-\node[leaf,below=4mm of f3] (f4) {PL: óptimo local es global. PNL: solo si hay convexidad};
-\draw[arr] (dif) -- (f1); \draw[arr] (f1) -- (f2);
-\draw[arr] (f2) -- (f3); \draw[arr] (f3) -- (f4);
+		\node[leaf,below=6mm of dif] (f1) {PL: el óptimo está en un vértice de la región factible};
+		\node[leaf,below=4mm of f1] (f2) {PNL: el óptimo puede estar en el interior, en la frontera o en un vértice};
+		\node[leaf,below=4mm of f2] (f3) {PL: simplex finito. PNL: métodos analíticos o iterativos};
+		\node[leaf,below=4mm of f3] (f4) {PL: óptimo local es global. PNL: solo si hay convexidad};
+		\draw[arr] (dif) -- (f1); \draw[arr] (f1) -- (f2);
+		\draw[arr] (f2) -- (f3); \draw[arr] (f3) -- (f4);
 
-\node[leaf,below=6mm of cla] (c1) {Sin restricciones: $\max/\min f(\mathbf{x})$};
-\node[leaf,below=4mm of c1] (c2) {Con restricciones de igualdad (Lagrange)};
-\node[leaf,below=4mm of c2] (c3) {Con desigualdad (Karush--Kuhn--Tucker)};
-\node[leaf,below=4mm of c3] (c4) {Cuadrática, convexa, separable, geométrica, fraccionaria};
-\draw[arr] (cla) -- (c1); \draw[arr] (c1) -- (c2);
-\draw[arr] (c2) -- (c3); \draw[arr] (c3) -- (c4);
-\end{tikzpicture}
-\caption{Mapa conceptual de la programación no lineal. Elaboración propia con base en Hillier y Lieberman (2015), Taha (2017) y Winston (2005).}
-\label{fig:mapa}
+		\node[leaf,below=6mm of cla] (c1) {Sin restricciones: $\max/\min f(\mathbf{x})$};
+		\node[leaf,below=4mm of c1] (c2) {Con restricciones de igualdad (Lagrange)};
+		\node[leaf,below=4mm of c2] (c3) {Con desigualdad (Karush--Kuhn--Tucker)};
+		\node[leaf,below=4mm of c3] (c4) {Cuadrática, convexa, separable, geométrica, fraccionaria};
+		\draw[arr] (cla) -- (c1); \draw[arr] (c1) -- (c2);
+		\draw[arr] (c2) -- (c3); \draw[arr] (c3) -- (c4);
+	\end{tikzpicture}
+	\caption{Mapa conceptual de la programación no lineal. Elaboración propia con base en Hillier y Lieberman (2015), Taha (2017) y Winston (2005).}
+	\label{fig:mapa}
 \end{figure}
 
 \subsubsection{Ilustración gráfica y diferencias con la programación lineal}
@@ -127,153 +127,153 @@ donde al menos una de las funciones $f$ o $g_i$ es no lineal en las variables de
 En PL, las curvas de nivel de $f$ son rectas paralelas y la región factible es un poliedro. El óptimo se alcanza siempre en un vértice, de modo que basta recorrer vértices adyacentes (método simplex). En PNL, las curvas de nivel pueden ser círculos, elipses u otras curvas. El óptimo puede quedar en un punto de tangencia entre una curva de nivel y la frontera, o incluso dentro de la región factible (Taha, 2017). La figura~\ref{fig:grafica} compara ambos casos.
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=0.75]
-% PL
-\begin{scope}
-\node[font=\small\bfseries] at (2.2,4.6) {(a) Programación lineal};
-\draw[->] (0,0) -- (4.6,0) node[right] {$x_1$};
-\draw[->] (0,0) -- (0,4.2) node[above] {$x_2$};
-\fill[blue!12] (0,0) -- (3.6,0) -- (2.6,2) -- (0.8,3.4) -- (0,3.4) -- cycle;
-\draw[thick,blue!60!black] (3.6,0) -- (2.6,2) -- (0.8,3.4);
-\foreach \c in {1.2,2.4,3.6}{
-  \draw[dashed,gray] (0,{\c}) -- ({\c*1.2},0);
-}
-\draw[dashed,red!70!black,thick] (0,4.2) -- (3.5,0.3);
-\fill[red!70!black] (2.6,2) circle (2pt) node[right,font=\footnotesize] {óptimo (vértice)};
-\end{scope}
-% PNL
-\begin{scope}[xshift=8cm]
-\node[font=\small\bfseries] at (2.2,4.6) {(b) Programación no lineal};
-\draw[->] (0,0) -- (4.6,0) node[right] {$x_1$};
-\draw[->] (0,0) -- (0,4.2) node[above] {$x_2$};
-\fill[blue!12] (0,0) -- (3.6,0) -- (2.6,2) -- (0.8,3.4) -- (0,3.4) -- cycle;
-\draw[thick,blue!60!black] (3.6,0) -- (2.6,2) -- (0.8,3.4);
-\foreach \r in {0.5,1.0,1.5}{
-  \draw[dashed,gray] (1.5,1.5) circle (\r);
-}
-\draw[dashed,red!70!black,thick] (1.5,1.5) circle (2.0);
-\fill[red!70!black] (1.5,1.5) circle (2pt) node[above left,font=\footnotesize] {óptimo (interior)};
-\end{scope}
-\end{tikzpicture}
-\caption{(a) En PL el óptimo está en un vértice. (b) En PNL, con curvas de nivel circulares, el óptimo puede estar en el interior de la región factible. Elaboración propia.}
-\label{fig:grafica}
+	\centering
+	\begin{tikzpicture}[scale=0.75]
+		% PL
+		\begin{scope}
+			\node[font=\small\bfseries] at (2.2,4.6) {(a) Programación lineal};
+			\draw[->] (0,0) -- (4.6,0) node[right] {$x_1$};
+			\draw[->] (0,0) -- (0,4.2) node[above] {$x_2$};
+			\fill[blue!12] (0,0) -- (3.6,0) -- (2.6,2) -- (0.8,3.4) -- (0,3.4) -- cycle;
+			\draw[thick,blue!60!black] (3.6,0) -- (2.6,2) -- (0.8,3.4);
+			\foreach \c in {1.2,2.4,3.6}{
+					\draw[dashed,gray] (0,{\c}) -- ({\c*1.2},0);
+				}
+			\draw[dashed,red!70!black,thick] (0,4.2) -- (3.5,0.3);
+			\fill[red!70!black] (2.6,2) circle (2pt) node[right,font=\footnotesize] {óptimo (vértice)};
+		\end{scope}
+		% PNL
+		\begin{scope}[xshift=8cm]
+			\node[font=\small\bfseries] at (2.2,4.6) {(b) Programación no lineal};
+			\draw[->] (0,0) -- (4.6,0) node[right] {$x_1$};
+			\draw[->] (0,0) -- (0,4.2) node[above] {$x_2$};
+			\fill[blue!12] (0,0) -- (3.6,0) -- (2.6,2) -- (0.8,3.4) -- (0,3.4) -- cycle;
+			\draw[thick,blue!60!black] (3.6,0) -- (2.6,2) -- (0.8,3.4);
+			\foreach \r in {0.5,1.0,1.5}{
+					\draw[dashed,gray] (1.5,1.5) circle (\r);
+				}
+			\draw[dashed,red!70!black,thick] (1.5,1.5) circle (2.0);
+			\fill[red!70!black] (1.5,1.5) circle (2pt) node[above left,font=\footnotesize] {óptimo (interior)};
+		\end{scope}
+	\end{tikzpicture}
+	\caption{(a) En PL el óptimo está en un vértice. (b) En PNL, con curvas de nivel circulares, el óptimo puede estar en el interior de la región factible. Elaboración propia.}
+	\label{fig:grafica}
 \end{figure}
 
 \begin{table}[H]
-\centering
-\caption{Comparación entre programación lineal y no lineal}
-\label{tab:comparacion}
-\small
-\begin{tabular}{p{3.2cm}p{5.6cm}p{5.6cm}}
-\toprule
-\textbf{Aspecto} & \textbf{Programación lineal} & \textbf{Programación no lineal} \\
-\midrule
-Funciones & $f$ y $g_i$ lineales & Al menos una no lineal \\
-Región factible & Poliedro convexo & Puede ser no convexa \\
-Ubicación del óptimo & Siempre en un vértice & Interior, frontera o vértice \\
-Óptimos & Todo óptimo local es global & Puede haber varios óptimos locales \\
-Método de solución & Simplex (finito, exacto) & Cálculo diferencial, gradiente, KKT, métodos iterativos \\
-Garantía de solución & Alta & Depende de la convexidad y del punto inicial \\
-\bottomrule
-\end{tabular}
+	\centering
+	\caption{Comparación entre programación lineal y no lineal}
+	\label{tab:comparacion}
+	\small
+	\begin{tabular}{p{3.2cm}p{5.6cm}p{5.6cm}}
+		\toprule
+		\textbf{Aspecto}     & \textbf{Programación lineal} & \textbf{Programación no lineal}                         \\
+		\midrule
+		Funciones            & $f$ y $g_i$ lineales         & Al menos una no lineal                                  \\
+		Región factible      & Poliedro convexo             & Puede ser no convexa                                    \\
+		Ubicación del óptimo & Siempre en un vértice        & Interior, frontera o vértice                            \\
+		Óptimos              & Todo óptimo local es global  & Puede haber varios óptimos locales                      \\
+		Método de solución   & Simplex (finito, exacto)     & Cálculo diferencial, gradiente, KKT, métodos iterativos \\
+		Garantía de solución & Alta                         & Depende de la convexidad y del punto inicial            \\
+		\bottomrule
+	\end{tabular}
 \end{table}
 
 \subsubsection{Clasificación de los problemas no lineales}
 
 Según Hillier y Lieberman (2015), los problemas de PNL se clasifican por la forma de $f$ y de las restricciones:
 \begin{itemize}
-\item \textbf{Optimización sin restricciones:} no hay $g_i$ y se resuelve con las condiciones de primer y segundo orden.
-\item \textbf{Con restricciones de igualdad:} se resuelve con multiplicadores de Lagrange.
-\item \textbf{Con restricciones de desigualdad:} se resuelve con las condiciones de Karush--Kuhn--Tucker (KKT).
-\item \textbf{Programación cuadrática:} $f$ es cuadrática y las restricciones son lineales.
-\item \textbf{Programación convexa:} $f$ es cóncava (en maximización) o convexa (en minimización) y la región factible es convexa. Aquí todo óptimo local es global.
-\item \textbf{Programación separable:} $f(\mathbf{x})=\sum_j f_j(x_j)$, lo que permite aproximarla por tramos lineales.
-\item \textbf{Programación geométrica y fraccionaria:} la función objetivo es un posinomio o un cociente de funciones.
+	\item \textbf{Optimización sin restricciones:} no hay $g_i$ y se resuelve con las condiciones de primer y segundo orden.
+	\item \textbf{Con restricciones de igualdad:} se resuelve con multiplicadores de Lagrange.
+	\item \textbf{Con restricciones de desigualdad:} se resuelve con las condiciones de Karush--Kuhn--Tucker (KKT).
+	\item \textbf{Programación cuadrática:} $f$ es cuadrática y las restricciones son lineales.
+	\item \textbf{Programación convexa:} $f$ es cóncava (en maximización) o convexa (en minimización) y la región factible es convexa. Aquí todo óptimo local es global.
+	\item \textbf{Programación separable:} $f(\mathbf{x})=\sum_j f_j(x_j)$, lo que permite aproximarla por tramos lineales.
+	\item \textbf{Programación geométrica y fraccionaria:} la función objetivo es un posinomio o un cociente de funciones.
 \end{itemize}
 
 \subsection{Esquema analítico de la optimización clásica}
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[node distance=6mm and 5mm]
-\node[root,text width=5cm] (oc) {Optimización no lineal clásica};
+	\centering
+	\begin{tikzpicture}[node distance=6mm and 5mm]
+		\node[root,text width=5cm] (oc) {Optimización no lineal clásica};
 
-\node[main,below left=12mm and 14mm of oc,text width=3.6cm] (sr) {Sin restricciones};
-\node[main,below right=12mm and 14mm of oc,text width=3.6cm] (cr) {Con restricciones de igualdad};
-\draw[arr] (oc) -- (sr); \draw[arr] (oc) -- (cr);
+		\node[main,below left=12mm and 14mm of oc,text width=3.6cm] (sr) {Sin restricciones};
+		\node[main,below right=12mm and 14mm of oc,text width=3.6cm] (cr) {Con restricciones de igualdad};
+		\draw[arr] (oc) -- (sr); \draw[arr] (oc) -- (cr);
 
-\node[leaf,below=6mm of sr,text width=4.2cm] (s1) {Puntos críticos: $f'(x^*)=0$ ($\nabla f(\mathbf{x}^*)=\mathbf{0}$)};
-\node[leaf,below=4mm of s1,text width=4.2cm] (s2) {1.ª derivada: cambio de signo de $f'$};
-\node[leaf,below=4mm of s2,text width=4.2cm] (s3) {2.ª derivada: $f''>0$ mínimo; $f''<0$ máximo; $f''=0$ no concluyente};
-\node[leaf,below=4mm of s3,text width=4.2cm] (s4) {Caso multivariable: matriz Hessiana $H$ definida positiva o negativa};
-\draw[arr] (sr) -- (s1); \draw[arr] (s1) -- (s2);
-\draw[arr] (s2) -- (s3); \draw[arr] (s3) -- (s4);
+		\node[leaf,below=6mm of sr,text width=4.2cm] (s1) {Puntos críticos: $f'(x^*)=0$ ($\nabla f(\mathbf{x}^*)=\mathbf{0}$)};
+		\node[leaf,below=4mm of s1,text width=4.2cm] (s2) {1.ª derivada: cambio de signo de $f'$};
+		\node[leaf,below=4mm of s2,text width=4.2cm] (s3) {2.ª derivada: $f''>0$ mínimo; $f''<0$ máximo; $f''=0$ no concluyente};
+		\node[leaf,below=4mm of s3,text width=4.2cm] (s4) {Caso multivariable: matriz Hessiana $H$ definida positiva o negativa};
+		\draw[arr] (sr) -- (s1); \draw[arr] (s1) -- (s2);
+		\draw[arr] (s2) -- (s3); \draw[arr] (s3) -- (s4);
 
-\node[leaf,below=6mm of cr,text width=4.2cm] (l1) {Problema: opt. $f(\mathbf{x})$ s.a. $h_j(\mathbf{x})=0$};
-\node[leaf,below=4mm of l1,text width=4.2cm] (l2) {Lagrangiano: $\mathcal{L}=f-\sum\lambda_j h_j$};
-\node[leaf,below=4mm of l2,text width=4.2cm] (l3) {Condiciones: $\nabla_{\mathbf{x}}\mathcal{L}=\mathbf{0}$ y $h_j=0$};
-\node[leaf,below=4mm of l3,text width=4.2cm] (l4) {$\lambda_j$: sensibilidad (precio sombra) de la restricción};
-\draw[arr] (cr) -- (l1); \draw[arr] (l1) -- (l2);
-\draw[arr] (l2) -- (l3); \draw[arr] (l3) -- (l4);
+		\node[leaf,below=6mm of cr,text width=4.2cm] (l1) {Problema: opt. $f(\mathbf{x})$ s.a. $h_j(\mathbf{x})=0$};
+		\node[leaf,below=4mm of l1,text width=4.2cm] (l2) {Lagrangiano: $\mathcal{L}=f-\sum\lambda_j h_j$};
+		\node[leaf,below=4mm of l2,text width=4.2cm] (l3) {Condiciones: $\nabla_{\mathbf{x}}\mathcal{L}=\mathbf{0}$ y $h_j=0$};
+		\node[leaf,below=4mm of l3,text width=4.2cm] (l4) {$\lambda_j$: sensibilidad (precio sombra) de la restricción};
+		\draw[arr] (cr) -- (l1); \draw[arr] (l1) -- (l2);
+		\draw[arr] (l2) -- (l3); \draw[arr] (l3) -- (l4);
 
-\node[main,below=14mm of s4,xshift=3.2cm,text width=7.5cm] (cl) {Clasificación de puntos: máximo/mínimo local, máximo/mínimo global, punto de inflexión o silla};
-\draw[arr] (s4) -- ++(0,-0.6) -| (cl);
-\draw[arr] (l4) -- ++(0,-0.6) -| (cl);
-\end{tikzpicture}
-\caption{Esquema analítico de la optimización no lineal clásica. Elaboración propia con base en Taha (2017) y Bazaraa et~al. (2006).}
-\label{fig:esquema}
+		\node[main,below=14mm of s4,xshift=3.2cm,text width=7.5cm] (cl) {Clasificación de puntos: máximo/mínimo local, máximo/mínimo global, punto de inflexión o silla};
+		\draw[arr] (s4) -- ++(0,-0.6) -| (cl);
+		\draw[arr] (l4) -- ++(0,-0.6) -| (cl);
+	\end{tikzpicture}
+	\caption{Esquema analítico de la optimización no lineal clásica. Elaboración propia con base en Taha (2017) y Bazaraa et~al. (2006).}
+	\label{fig:esquema}
 \end{figure}
 
 \subsubsection{Máximos, mínimos y puntos de inflexión}
 
 Sea $f:\mathbb{R}\to\mathbb{R}$ diferenciable.
 \begin{itemize}
-\item $x^*$ es un \textbf{mínimo local} si $f(x^*)\le f(x)$ para todo $x$ en un entorno de $x^*$. Es un \textbf{máximo local} si $f(x^*)\ge f(x)$ en un entorno.
-\item $x^*$ es un \textbf{mínimo global} (o máximo global) si la desigualdad se cumple en todo el dominio factible. Todo óptimo global es local, pero lo contrario no se cumple en general.
-\item Un \textbf{punto de inflexión} es aquel donde la concavidad cambia ($f''$ cambia de signo). Si además $f'(x^*)=0$, no es máximo ni mínimo y se llama punto de silla o de inflexión horizontal (Winston, 2005).
+	\item $x^*$ es un \textbf{mínimo local} si $f(x^*)\le f(x)$ para todo $x$ en un entorno de $x^*$. Es un \textbf{máximo local} si $f(x^*)\ge f(x)$ en un entorno.
+	\item $x^*$ es un \textbf{mínimo global} (o máximo global) si la desigualdad se cumple en todo el dominio factible. Todo óptimo global es local, pero lo contrario no se cumple en general.
+	\item Un \textbf{punto de inflexión} es aquel donde la concavidad cambia ($f''$ cambia de signo). Si además $f'(x^*)=0$, no es máximo ni mínimo y se llama punto de silla o de inflexión horizontal (Winston, 2005).
 \end{itemize}
 
 La figura~\ref{fig:cubica} ilustra estos conceptos con $f(x)=x^3-3x$.
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[x=1.7cm,y=0.75cm]
-\draw[->] (-2.3,0) -- (2.4,0) node[right] {$x$};
-\draw[->] (0,-3.2) -- (0,3.4) node[above] {$f(x)$};
-\draw[thick,blue!60!black,domain=-2.1:2.1,samples=60,smooth] plot (\x,{\x*\x*\x-3*\x});
-\fill[red!70!black] (-1,2) circle (2pt) node[above left,font=\footnotesize] {máx. local $(-1,2)$};
-\fill[red!70!black] (1,-2) circle (2pt) node[below right,font=\footnotesize] {mín. local $(1,-2)$};
-\fill[green!50!black] (0,0) circle (2pt) node[above right,font=\footnotesize] {inflexión $(0,0)$};
-\end{tikzpicture}
-\caption{Gráfica de $f(x)=x^3-3x$ con sus extremos locales y su punto de inflexión. No hay extremos globales porque $f\to\pm\infty$.}
-\label{fig:cubica}
+	\centering
+	\begin{tikzpicture}[x=1.7cm,y=0.75cm]
+		\draw[->] (-2.3,0) -- (2.4,0) node[right] {$x$};
+		\draw[->] (0,-3.2) -- (0,3.4) node[above] {$f(x)$};
+		\draw[thick,blue!60!black,domain=-2.1:2.1,samples=60,smooth] plot (\x,{\x*\x*\x-3*\x});
+		\fill[red!70!black] (-1,2) circle (2pt) node[above left,font=\footnotesize] {máx. local $(-1,2)$};
+		\fill[red!70!black] (1,-2) circle (2pt) node[below right,font=\footnotesize] {mín. local $(1,-2)$};
+		\fill[green!50!black] (0,0) circle (2pt) node[above right,font=\footnotesize] {inflexión $(0,0)$};
+	\end{tikzpicture}
+	\caption{Gráfica de $f(x)=x^3-3x$ con sus extremos locales y su punto de inflexión. No hay extremos globales porque $f\to\pm\infty$.}
+	\label{fig:cubica}
 \end{figure}
 
 \subsubsection{Criterio de la primera derivada}
 
 Los candidatos a extremo son los \emph{puntos críticos}, donde $f'(x^*)=0$ (condición necesaria de primer orden). Para clasificarlos se observa el signo de $f'$ alrededor de $x^*$:
 \begin{itemize}
-\item si $f'$ pasa de positiva a negativa, $x^*$ es un máximo local;
-\item si $f'$ pasa de negativa a positiva, $x^*$ es un mínimo local;
-\item si $f'$ no cambia de signo, $x^*$ no es un extremo.
+	\item si $f'$ pasa de positiva a negativa, $x^*$ es un máximo local;
+	\item si $f'$ pasa de negativa a positiva, $x^*$ es un mínimo local;
+	\item si $f'$ no cambia de signo, $x^*$ no es un extremo.
 \end{itemize}
 
 \subsubsection{Criterio de la segunda derivada}
 
 Si $f'(x^*)=0$, entonces:
 \begin{itemize}
-\item $f''(x^*)>0 \Rightarrow$ mínimo local (la función es localmente convexa);
-\item $f''(x^*)<0 \Rightarrow$ máximo local (la función es localmente cóncava);
-\item $f''(x^*)=0 \Rightarrow$ el criterio no concluye y se recurre a derivadas de orden superior o a la primera derivada.
+	\item $f''(x^*)>0 \Rightarrow$ mínimo local (la función es localmente convexa);
+	\item $f''(x^*)<0 \Rightarrow$ máximo local (la función es localmente cóncava);
+	\item $f''(x^*)=0 \Rightarrow$ el criterio no concluye y se recurre a derivadas de orden superior o a la primera derivada.
 \end{itemize}
 Para $f:\mathbb{R}^n\to\mathbb{R}$, la condición necesaria es $\nabla f(\mathbf{x}^*)=\mathbf{0}$. La clasificación se hace con la matriz Hessiana $H=\left[\partial^2 f/\partial x_i\partial x_j\right]$: si $H$ es definida positiva, el punto es un mínimo local; si es definida negativa, un máximo local; si es indefinida, un punto de silla (Bazaraa et~al., 2006).
 
 \textbf{Ejemplo.} Para $f(x)=x^3-3x$ se tiene $f'(x)=3x^2-3=0 \Rightarrow x=\pm1$ y $f''(x)=6x$.
 \begin{itemize}
-\item $f''(-1)=-6<0$, así que $x=-1$ es un máximo local con $f(-1)=2$.
-\item $f''(1)=6>0$, así que $x=1$ es un mínimo local con $f(1)=-2$.
-\item $f''(x)=0$ en $x=0$ y $f''$ cambia de signo, así que $x=0$ es un punto de inflexión con $f(0)=0$.
+	\item $f''(-1)=-6<0$, así que $x=-1$ es un máximo local con $f(-1)=2$.
+	\item $f''(1)=6>0$, así que $x=1$ es un mínimo local con $f(1)=-2$.
+	\item $f''(x)=0$ en $x=0$ y $f''$ cambia de signo, así que $x=0$ es un punto de inflexión con $f(0)=0$.
 \end{itemize}
 
 \textbf{Óptimos globales.} Si $f$ es convexa (para mínimo) o cóncava (para máximo) en el conjunto factible, el óptimo local es global. En otros casos se comparan los valores de $f$ en los puntos críticos y en la frontera del dominio.
@@ -282,37 +282,37 @@ Para $f:\mathbb{R}^n\to\mathbb{R}$, la condición necesaria es $\nabla f(\mathbf
 
 Para optimizar $f(\mathbf{x})$ sujeta a $h_j(\mathbf{x})=0$, $j=1,\dots,m$, se define el lagrangiano
 \begin{equation}
-\mathcal{L}(\mathbf{x},\boldsymbol{\lambda}) = f(\mathbf{x}) - \sum_{j=1}^{m}\lambda_j\,h_j(\mathbf{x}).
+	\mathcal{L}(\mathbf{x},\boldsymbol{\lambda}) = f(\mathbf{x}) - \sum_{j=1}^{m}\lambda_j\,h_j(\mathbf{x}).
 \end{equation}
 Las condiciones necesarias de óptimo son $\partial\mathcal{L}/\partial x_i=0$ para cada $i$ y $h_j(\mathbf{x})=0$ para cada $j$. Geométricamente, en el óptimo el gradiente de $f$ es combinación lineal de los gradientes de las restricciones, es decir, las curvas de nivel de $f$ son tangentes a la restricción. El multiplicador $\lambda_j$ indica cuánto cambia el valor óptimo de $f$ por cada unidad que se relaja el lado derecho de la restricción (Hillier y Lieberman, 2015).
 
 \textbf{Ejemplo.} Minimizar $f(x,y)=x^2+y^2$ sujeta a $x+y=2$.
 
 \begin{enumerate}
-\item Lagrangiano: $\mathcal{L}=x^2+y^2-\lambda(x+y-2)$.
-\item Derivadas parciales:
-\[
-\frac{\partial\mathcal{L}}{\partial x}=2x-\lambda=0,\qquad
-\frac{\partial\mathcal{L}}{\partial y}=2y-\lambda=0,\qquad
-x+y=2.
-\]
-\item De las dos primeras, $x=y=\lambda/2$. Al sustituir en la restricción, $\lambda=2$ y por tanto $x^*=y^*=1$.
-\item Valor óptimo: $f(1,1)=2$. El punto es un mínimo porque $f$ es convexa y la restricción es lineal, de modo que el mínimo local es global.
-\item Interpretación: si el lado derecho pasa de $2$ a $2+\Delta$, el mínimo cambia aproximadamente $\lambda\,\Delta=2\Delta$. En efecto, el mínimo exacto es $\Delta'^2/2$ con $\Delta'=2+\Delta$, y su derivada en $\Delta'=2$ vale $2$.
+	\item Lagrangiano: $\mathcal{L}=x^2+y^2-\lambda(x+y-2)$.
+	\item Derivadas parciales:
+	      \[
+		      \frac{\partial\mathcal{L}}{\partial x}=2x-\lambda=0,\qquad
+		      \frac{\partial\mathcal{L}}{\partial y}=2y-\lambda=0,\qquad
+		      x+y=2.
+	      \]
+	\item De las dos primeras, $x=y=\lambda/2$. Al sustituir en la restricción, $\lambda=2$ y por tanto $x^*=y^*=1$.
+	\item Valor óptimo: $f(1,1)=2$. El punto es un mínimo porque $f$ es convexa y la restricción es lineal, de modo que el mínimo local es global.
+	\item Interpretación: si el lado derecho pasa de $2$ a $2+\Delta$, el mínimo cambia aproximadamente $\lambda\,\Delta=2\Delta$. En efecto, el mínimo exacto es $\Delta'^2/2$ con $\Delta'=2+\Delta$, y su derivada en $\Delta'=2$ vale $2$.
 \end{enumerate}
 
 \begin{figure}[H]
-\centering
-\begin{tikzpicture}[scale=1.1]
-\draw[->] (-0.4,0) -- (3.4,0) node[right] {$x$};
-\draw[->] (0,-0.4) -- (0,3.4) node[above] {$y$};
-\foreach \r in {0.7,1.0,1.414,2.0}{\draw[gray,dashed] (0,0) circle (\r);}
-\draw[thick,blue!60!black] (-0.2,2.2) -- (2.2,-0.2) node[right,font=\footnotesize] {$x+y=2$};
-\fill[red!70!black] (1,1) circle (2pt) node[above right,font=\footnotesize] {$(1,1)$, $f=2$};
-\draw[-{Stealth},red!70!black] (1,1) -- (1.6,1.6) node[right,font=\footnotesize] {$\nabla f$};
-\end{tikzpicture}
-\caption{Solución geométrica del ejemplo: la circunferencia $x^2+y^2=2$ es tangente a la restricción en $(1,1)$.}
-\label{fig:lagrange}
+	\centering
+	\begin{tikzpicture}[scale=1.1]
+		\draw[->] (-0.4,0) -- (3.4,0) node[right] {$x$};
+		\draw[->] (0,-0.4) -- (0,3.4) node[above] {$y$};
+		\foreach \r in {0.7,1.0,1.414,2.0}{\draw[gray,dashed] (0,0) circle (\r);}
+		\draw[thick,blue!60!black] (-0.2,2.2) -- (2.2,-0.2) node[right,font=\footnotesize] {$x+y=2$};
+		\fill[red!70!black] (1,1) circle (2pt) node[above right,font=\footnotesize] {$(1,1)$, $f=2$};
+		\draw[-{Stealth},red!70!black] (1,1) -- (1.6,1.6) node[right,font=\footnotesize] {$\nabla f$};
+	\end{tikzpicture}
+	\caption{Solución geométrica del ejemplo: la circunferencia $x^2+y^2=2$ es tangente a la restricción en $(1,1)$.}
+	\label{fig:lagrange}
 \end{figure}
 
 \section{Conclusión}
